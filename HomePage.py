@@ -9,34 +9,32 @@ st.set_page_config(
 )
 st.sidebar.title('Navigation')
 page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Other Page'))
-
-if page == 'Animal Facts':
+if page == 'Home':
+    st.title("Home Page")
+elif page == 'Animal Facts':
     # This sets the title of the Animal Facts page
     st.title('Animal Facts')
 
     # Creates a dropdown menu for users to select an animal
     # You can add more animals to the list
-    animal = st.selectbox('Select an animal', ['Lion', 'Tiger', 'Bear'])
+    animal = st.selectbox('Select an animal', ['Camel'])
     
     # Once an animal is selected, display information about that animal
     if animal:
-        # Sets a header with the name of the selected animal
-        st.header(f'Facts about {animal}')
-        
-        # Displays information about how the selected animal gets food
-        # Replace '...' with actual information or code to fetch/display that information
-        st.subheader('How the animal gets food')
-        st.write('...')  # Replace with actual information or dynamic content
-        
-        # Displays information about how the selected animal protects itself from predators
-        # Replace '...' with actual information or code to fetch/display that information
-        st.subheader('How the animal protects itself from predators')
-        st.write('...')  # Replace with actual information or dynamic content
-        
-        # Displays information about the sleeping habits of the selected animal
-        # Replace '...' with actual information or code to fetch/display that information
-        st.subheader("Animal's Sleeping Habits")
-        st.write('...')  # Replace with actual information or dynamic content
+        st.title("The Majestic Camel")
+
+        # Download or use a local image path for the camel picture
+        camel_image = "bm_camel_free.webp"  # Replace with your image URL
+
+        # Add the image with centered alignment
+        st.image(camel_image, use_column_width=True)
+
+        # Write the description below the image
+        st.markdown("""
+        The camel is a fascinating creature adapted to harsh desert environments. With its hump storing fat for energy, strong legs for traversing sand, and wide nostrils for filtering dust, the camel thrives where few animals can.
+
+        They have played a crucial role in human history as transportation, a source of milk and wool, and even symbols of resilience and strength.
+        """)
 elif page == 'Other Page':
     # Sets the title of the Other Page
     st.title('Other Page Title')
