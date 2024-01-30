@@ -64,6 +64,7 @@ elif page == 'Animal Facts':
     
     # Once an animal is selected, display information about that animal
     if animal:
+
         st.title("The Majestic Camel")
 
         # Download or use a local image path for the camel picture
@@ -78,6 +79,17 @@ elif page == 'Animal Facts':
 
         They have played a crucial role in human history as transportation, a source of milk and wool, and even symbols of resilience and strength.
         """)
+        st.title("The Majestic Camel")
+
+    # ... (image and description code)
+
+        st.subheader("Interesting Facts about Camels")
+        st.write("**1. Water-Wise Wonders:** Contrary to popular belief, camels don't store water in their humps. Instead, those humps are packed with fatty tissue that can be broken down for energy and water when needed, allowing them to survive for weeks in the desert without drinking.")
+        st.write("**2. Sandstorm Survivors:** Camels have special adaptations to protect them from harsh desert conditions. Their nostrils can close to keep out sand, and their thick eyelashes and three eyelids shield their eyes from blowing dust.")
+        st.write("**3. Super-Sippers:** When a camel does find water, it can drink up to 40 gallons in a single session! That's about 150 liters, or as much as a bathtub full of water.")
+
+
+
 elif page == 'Other Page':
     # Sets the title of the Other Page
     st.title('Other Page Title')
@@ -104,24 +116,3 @@ elif page == 'Other Page':
     st.subheader('Section 4: Interactive Elements')
     if st.button('Say hello'):
         st.write('Hello, Streamlit!')
-if page == 'Animal Facts':
-    st.title('Animal Facts')
-
-    # User selects or inputs the animal
-    animal = st.selectbox('Select an animal', ['Lion', 'Tiger', 'Bear'])
-    
-    # Display information about the animal
-    if animal:
-        st.header(f'Facts about {animal}')
-        
-        # Display how the animal gets food
-        st.subheader('How the animal gets food')
-        st.write('...')  # Replace with actual information or dynamic content
-        
-        # Display how the animal protects itself from predators
-        st.subheader('How the animal protects itself from predators')
-        st.write('...')  # Replace with actual information or dynamic content
-        
-        # Display the animal's sleeping habits
-        st.subheader("Animal's Sleeping Habits")
-        st.write('...')  # Replace with actual information or dynamic content
