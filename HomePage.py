@@ -1,14 +1,37 @@
 import streamlit as st
 
-# Other libraries you might need (e.g., pandas for data handling)
+# Set the page config as the first command
 st.set_page_config(
     page_title="Animal Facts",
     page_icon=":tiger:",
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Custom CSS to inject contained in a string
+custom_css = """
+    <style>
+        /* Main page background */
+        .stApp {
+            background-color: #f4f1de;  /* Soft Sand color */
+        }
+        /* Sidebar background */
+        .css-1d391kg {
+            background-color: #e8e4d9;  /* A shade darker than main background for subtle contrast */
+        }
+        /* Modify button colors, text color, etc., if needed */
+        /* Example: .stButton > button { background-color: #add8e6; }  /* Sky Blue */
+    </style>
+"""
+
+# Inject custom CSS with Markdown
+st.markdown(custom_css, unsafe_allow_html=True)
+
+
+# Rest of your Streamlit commands
 st.sidebar.title('Navigation')
 page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Other Page'))
+
 if page == 'Home':
     st.title("Home Page")
 elif page == 'Animal Facts':
