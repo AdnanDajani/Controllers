@@ -3,12 +3,12 @@ import streamlit as st
 # Set the page config as the first command
 st.set_page_config(
     page_title="Animal Facts",
-    page_icon=":tiger:",
+    page_icon=":camel:",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS to inject contained in a string
+# Custom CSS to change background color
 custom_css = """
     <style>
         /* Main page background */
@@ -19,21 +19,41 @@ custom_css = """
         .css-1d391kg {
             background-color: #e8e4d9;  /* A shade darker than main background for subtle contrast */
         }
-        /* Modify button colors, text color, etc., if needed */
-        /* Example: .stButton > button { background-color: #add8e6; }  /* Sky Blue */
     </style>
 """
-
-# Inject custom CSS with Markdown
 st.markdown(custom_css, unsafe_allow_html=True)
 
-
-# Rest of your Streamlit commands
+# Sidebar navigation
 st.sidebar.title('Navigation')
 page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Other Page'))
 
 if page == 'Home':
-    st.title("Home Page")
+    st.title("Welcome to the Camel World!")
+
+    # Introduction to camels
+    st.markdown("""
+    ### Discover the Majestic World of Camels
+    Camels are remarkable creatures known for their ability to adapt to extreme environments. From the hot, arid deserts to the cold, barren steppes, camels have been invaluable companions to humans for thousands of years.
+    """)
+
+    # Display multiple images of camels with captions
+    camel_images = ["camel_image_1.png", "camel_image_2.png", "camel_image_3.png"]  # Replace with your actual image paths or URLs
+
+
+    
+     # Create columns for each image
+    cols = st.columns(len(camel_images))
+    for idx, img in enumerate(camel_images):
+        # Display each image in a column, setting the width to make them smaller
+        cols[idx].image(img, use_column_width=True, caption="Majestic Camel")
+
+    # More detailed introduction about camels
+    st.markdown("""
+    #### Fascinating Camel Facts
+    - **Adaptation**: Camels have adapted incredibly well to life in the desert. Their humps store fat, which can be converted to water and energy when sustenance is not available.
+    - **Resilience**: These hardy animals can survive in temperatures ranging from below freezing to over 50°C (122°F).
+    - **Importance**: Camels have been domesticated for their milk, meat, wool, and as transportation. Their ability to carry heavy loads for long distances makes them indispensable for desert travel.
+    """)
 elif page == 'Animal Facts':
     # This sets the title of the Animal Facts page
     st.title('Animal Facts')
