@@ -26,7 +26,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # Sidebar navigation
 st.sidebar.title('Navigation')
 
-page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Animal Communications','Popular Culture', 'Other Page'))
+page = st.sidebar.radio("Go to", ('Home', 'Animal Gallery', 'Animal Communications','Popular Culture'))
 
 if page == 'Home':
     st.title("Welcome to the Camel World!")
@@ -55,9 +55,9 @@ if page == 'Home':
     - **Resilience**: These hardy animals can survive in temperatures ranging from below freezing to over 50°C (122°F).
     - **Importance**: Camels have been domesticated for their milk, meat, wool, and as transportation. Their ability to carry heavy loads for long distances makes them indispensable for desert travel.
     """)
-elif page == 'Animal Facts':
+elif page == 'Animal Gallery':
     # This sets the title of the Animal Facts page
-    st.title('Animal Facts')
+    st.title('Animal Gallery')
 
     # Creates a dropdown menu for users to select an animal
     # You can add more animals to the list
@@ -91,6 +91,7 @@ elif page == 'Animal Facts':
 
 elif page == 'Animal Communications':
     st.title('Animal Communications')
+    st.image("/workspaces/Controllers/images/camel comm.webp", use_column_width=True)
 
     # Camel Friends (Other Camels)
     st.subheader("Camel Talk: Whispers in the Sand")
@@ -139,15 +140,8 @@ elif page == 'Other Page':
 elif page == 'Popular Culture':
     # Sets the title of the Other Page
     st.title("Welcome to the Animal Fun Zone!")
-    st.image("https://example.com/kid_friendly_cover_image.jpg", use_column_width=True, caption="Image Source: Example.com")
+    st.image("images/saj-shafique-de7Zqg3j3FI-unsplash.jpg", use_column_width=True)
     
-    st.write(
-        """
-        Explore the magical world of animals in our fun gallery. 
-        View adorable pictures of various animals and discover interesting facts about them.
-        Join us and let's have a blast learning about our furry friends!
-        """
-    )
 
     #st.button("Let's Explore!", on_click=animal_gallery)
 
