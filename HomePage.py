@@ -25,7 +25,7 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 # Sidebar navigation
 st.sidebar.title('Navigation')
-page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Other Page'))
+page = st.sidebar.radio("Go to", ('Home', 'Animal Facts', 'Animal Communications', 'Other Page'))
 
 if page == 'Home':
     st.title("Welcome to the Camel World!")
@@ -88,7 +88,24 @@ elif page == 'Animal Facts':
         st.write("**2. Sandstorm Survivors:** Camels have special adaptations to protect them from harsh desert conditions. Their nostrils can close to keep out sand, and their thick eyelashes and three eyelids shield their eyes from blowing dust.")
         st.write("**3. Super-Sippers:** When a camel does find water, it can drink up to 40 gallons in a single session! That's about 150 liters, or as much as a bathtub full of water.")
 
+elif page == 'Animal Communications':
+    st.title('Animal Communications')
 
+    # Camel Friends (Other Camels)
+    st.subheader("Camel Talk: Whispers in the Sand")
+    st.markdown("* **Body Language:** Camels chat with their bodies! A lowered head says 'Hi, friend!', while standing tall might proclaim 'I'm the boss!'")
+    st.markdown("* **Ear Magic:** Like our ears, camel ears show feelings. Forward means happy listening, while back signals grumpiness.")
+    st.markdown("* **Tail Tales:** Excited or grumpy? A raised tail tells the story. Shy or scared? Tuck it in tight.")
+    st.markdown("* **Camel Choir:** Grunts, roars, moans, and bellows - their unique songs fill the desert air.")
+    st.markdown("* **Smelly Signals:** Secret scents mark territory and say 'We're buddies!' with neck rubs.")
+    st.markdown("* **Hugs & Grooming:** A friendly way to say 'You're my friend,' with furry hugs and mutual cleaning.")
+
+    # Other Friends (Humans and Animals)
+    st.subheader("Beyond the Hump: Making Connections")
+    st.markdown("* **People Talk:** Some camels understand us! They're smart and learn tricks and commands.")
+    st.markdown("* **Animal Pals:** Curious about dogs and horses? Camels check out their furry neighbors.")
+    st.markdown("* **Super Senses:** Like superhero guards, they warn of sneaky predators with amazing senses. Other animals listen to their alerts.")
+    st.markdown("* **Unique Communicators:** Not just big and fluffy, camels are big talkers in their own special ways!")
 
 elif page == 'Other Page':
     # Sets the title of the Other Page
